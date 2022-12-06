@@ -4,4 +4,4 @@ Hi there! This is an extremely experimental, eye-piercing theme that I have crea
 
 If you have anything to say, you can message me on Discord with this tag: `James Lemony#5517`.
 
-[[images/demo1.png]]
+![Here a picture:](https://github.com/JamesLemony/obsidian_vibrant/blob/main/images/demo1)
