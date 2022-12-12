@@ -166,6 +166,16 @@ input[type=checkbox]:checked:hover {
   background-color: var(--text-link);
 }
 
+/* Checkbox Buttons */
+
+.checkbox-container {
+    background-color: var(--text-bold);
+}
+
+.checkbox-container.is-enabled {
+  background-color: var(--text-link);
+}
+
 /* Tabs */
 
 .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title  {
@@ -384,8 +394,14 @@ button:focus, button:hover, textarea:hover, textarea:focus {
 }
 
 .vertical-tab-nav-item:hover {
+  transition: 0.3s;
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-text);
+}
+
+.vertical-tab-nav-item {
+  transition: 0.3s;
+  border: 2px solid var(--background-primary)
 }
 
 .modal.mod-settings .vertical-tab-header {
@@ -398,7 +414,7 @@ button:focus, button:hover, textarea:hover, textarea:focus {
   border: 2px solid var(--accent-color-borders);
 }
 
-.community-modal-sidebar {
+.community-modal-sidebar, .modal-sidebar {
   background-color: var(--background-primary);
 }
 
