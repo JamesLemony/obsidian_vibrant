@@ -98,7 +98,7 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
   color: var(--text-normal);
 }
 
-.markdown-source-view.mod-cm6 .cm-indent::before {
+.markdown-source-view.mod-cm6 .cm-indent::before, .markdown-rendered.show-indentation-guide li > ul::before {
   color: var(--accent-color-text);
   width: 0px;
   border-right: 2px solid var(--accent-color-text);
@@ -178,7 +178,7 @@ input[type=checkbox]:checked:hover {
 
 /* Tabs */
 
-.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title  {
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
   color: var(--accent-color-text) !important;
 }
 
@@ -343,6 +343,15 @@ hr.workspace-leaf-resize-handle {
   color: var(--accent-color-text);
 }
 
+.workspace-leaf-content {
+    background-color: var(--background-primary);
+}
+
+.search-result-file-matches {
+    color: var(--accent-color-borders);
+    background-color: var(--background-primary);
+    border: 2px solid var(--accent-color-borders);
+}
 
 /* Settings */
 
@@ -351,8 +360,7 @@ hr.workspace-leaf-resize-handle {
   font-size: larger;
 }
 
-input[type='text'], input[type='text']:focus, input[type='search']:focus {
-  color: var(--text-normal);
+input[type='text'], input[type='text']:focus, input[type='search']:focus{
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-borders);
 }
@@ -373,9 +381,10 @@ input[type='text']:hover, input[type='search']:hover, input[type='text']:focus, 
   border: 2px solid var(--accent-color-text) !important;
 }
 
-button {
+button, button.mod-cta {
   background-color: var(--background-primary) !important;
   border: 2px solid var(--accent-color-borders);
+  color: var(--accent-color-borders);
 }
 
 textarea {
@@ -383,14 +392,16 @@ textarea {
   border: 2px solid var(--accent-color-borders);
 }
 
-button:focus, button:hover, textarea:hover, textarea:focus {
+button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover , .dropdown:hover {
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-text) !important;
+  color: var(--accent-color-text) !important;
 }
 
 .horizontal-tab-nav-item.is-active, .vertical-tab-nav-item.is-active, .vertical-tab-nav-item.is-active:hover {
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-text);
+  color: var(--accent-color-text);
 }
 
 .vertical-tab-nav-item:hover {
@@ -491,6 +502,10 @@ button:focus, button:hover, textarea:hover, textarea:focus {
 
 .theme-dark .workspace-leaf-content[data-type='canvas'] .view-content {
   --theme: 255, 255, 255;
+}
+
+.canvas-node-content.markdown-embed .inline-title {
+  margin-bottom: -2%;
 }
 
 /* Headings */
