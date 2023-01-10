@@ -8,7 +8,7 @@
 
   --accent-color-text: #FFFF00;
   --accent-color-borders: #FFFFFF;
-  --icon-color: #FFFFFF;
+  --color-icon: #FFFFFF;
   --gray-color: #585858;
 
   --text-normal: #FFFFFF;
@@ -221,7 +221,7 @@ input[type=checkbox]:checked:hover {
 }
 
 .clickable-icon {
-  color: var(--icon-color) !important;
+  color: var(--color-icon) !important;
   opacity: 1;
 }
 
@@ -230,7 +230,7 @@ input[type=checkbox]:checked:hover {
 }
 
 .mod-linux .titlebar-button, .mod-windows .titlebar-button {
-  color: var(--icon-color) !important;
+  color: var(--color-icon) !important;
   background-color: var(--background-primary);
 }
 
@@ -246,9 +246,9 @@ input[type=checkbox]:checked:hover {
 }
 
 svg.svg-icon, rect, svg {
-  color: var(--icon-color) !important;
+  color: var(--color-icon);
   opacity: 1;
-  stroke: var(--icon-color);
+  stroke: var(--color-icon);
   stroke-width: 3px;
 }
 
@@ -437,17 +437,29 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
   border: 2px solid var(--accent-color-borders);
 }
 
-.community-item.is-selected {
+.community-item.is-selected, .community-item.is-selected:hover, .community-item:hover {
+  color: var(--accent-color-borders);
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-text);
 }
 
-.community-item-name, .community-item.is-selected .flair {
+.community-item-name {
   color: var(--accent-color-text);
 }
 
-.community-item.is-selected .community-item-author, .community-item.is-selected .community-item-repo, .community-item.is-selected .community-item-downloads, .community-item.is-selected .community-item-updated, .community-item-updated, .community-item-desc {
+.community-item.is-selected .flair, .community-item.is-selected:hover .flair, .community-item .flair {
+  color: var(--background-primary);
+  background-color: var(--accent-color-text);
+}
+
+.community-item.is-selected .community-item-author, .community-item.is-selected:hover .community-item-author,
+.community-item.is-selected .community-item-repo, .community-item-downloads-text, 
+.community-item.is-selected .community-item-downloads, .community-item.is-selected:hover .community-item-downloads,
+.community-item.is-selected .community-item-updated, .community-item.is-selected:hover .community-item-updated,
+.community-item-updated, .community-item-desc,
+.community-item-author {
   color: var(--accent-color-borders);
+  opacity: 1;
 }
 
 /* Top Bar */
@@ -512,12 +524,18 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 }
 
 .canvas-node-resizer[data-resize='left'], .canvas-node-resizer[data-resize='right'], .canvas-node-resizer[data-resize='top'], .canvas-node-resizer[data-resize='bottom'] {
-  color: var(--text-bold);
+  color: var(--accent-color-text);
   opacity: 1;
+  stroke-width: 3px;
+  stroke: #00ddff;
 }
 
 .theme-dark .workspace-leaf-content[data-type='canvas'] .view-content {
   --theme: 255, 255, 255;
+}
+
+.canvas-node {
+  border-color: var(--accent-color-text);
 }
 
 
@@ -552,6 +570,146 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 {
   color: var(--text-title-h6);
 }
+
+.callout {
+  background-color: var(--background-secondary);
+}
+
+.callout:is([data-callout="note"]) {
+  border-color: #4187ff;
+}
+.callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) {
+  border-color: #9de1ff;
+}
+.callout:is([data-callout="info"], [data-callout="todo"]) {
+  border-color: #00ddff;
+}
+.callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) {
+  border-color: #00ffe5;
+}
+.callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) {
+  border-color: #00ff62;
+}
+.callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) {
+  border-color: #62ff00;
+}
+.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) {
+  border-color: #ff9500;
+}
+.callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) {
+  border-color: #ff0000;
+}
+.callout:is([data-callout="danger"], [data-callout="error"]) {
+  border-color: #ff0033;
+}
+.callout[data-callout="bug"] {
+  border-color: #ff005d;
+}
+.callout[data-callout="example"] {
+  border-color: #9e77ff;
+}
+.callout:is([data-callout="quote"], [data-callout="cite"]) {
+  border-color: var(--text-normal);
+}
+
+.callout:is([data-callout="note"]) > .callout-title {
+  color: #4187ff;
+}
+.callout:is([data-callout="note"]) > .callout-title .callout-icon .svg-icon {
+  stroke: #4187ff;
+}
+
+.callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title {
+  color: #9de1ff;
+}
+.callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #9de1ff;
+}
+
+.callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title {
+  color: #00ddff;
+}
+.callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #00ddff;
+}
+
+.callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title {
+  color: #00ffe5;
+}
+.callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #00ffe5;
+}
+
+.callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title {
+  color: #00ff62;
+}
+.callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #00ff62;
+}
+
+.callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title {
+  color: #62ff00;
+}
+.callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #62ff00;
+}
+
+.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title {
+  color: #ff9500;
+}
+.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #ff9500;
+}
+
+.callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title {
+  color: #ff0000;
+}
+.callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #ff0000;
+}
+
+.callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title {
+  color: #ff0033;
+}
+.callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title .callout-icon .svg-icon * {
+  stroke: #ff0033;
+}
+
+.callout[data-callout="bug"] > .callout-title {
+  color: #ff005d;
+}
+.callout[data-callout="bug"] > .callout-title .callout-icon .svg-icon * {
+  stroke: #ff005d;
+}
+
+.callout[data-callout="example"] > .callout-title {
+  color: #9e77ff;
+}
+.callout[data-callout="example"] > .callout-title .callout-icon .svg-icon * {
+  stroke: #9e77ff;
+}
+
+.callout:is([data-callout="quote"], [data-callout="cite"]) > .callout-title {
+  color: var(--text-normal);
+}
+
+.cm-s-obsidian span.cm-quote {
+  color: var(--text-normal);
+}
+
+.cm-s-obsidian span.cm-formatting-quote {
+  color: var(--accent-color-text);
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+  margin-left: -10px;
+}
+
+.callout-content {
+  color: var(--text-normal);
+}
+
+/*
 
 .callout:is([data-callout="note"]) {
   background-color: #001b49;
@@ -590,59 +748,4 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
   background-color: #101010;
 }
 
-.callout .svg-icon {
-  color: var(--icon-color);
-}
-
-.callout:is([data-callout="note"]) > .callout-title {
-  color: #4187ff;
-}
-.callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title {
-  color: #9de1ff;
-}
-.callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title {
-  color: #00ddff;
-}
-.callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title {
-  color: #00ffe5;
-}
-.callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title {
-  color: #00ff62;
-}
-.callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title {
-  color: #62ff00;
-}
-.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title {
-  color: #ff9500;
-}
-.callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title {
-  color: #ff0000;
-}
-.callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title {
-  color: #ff0033;
-}
-.callout[data-callout="bug"] > .callout-title {
-  color: #ff005d;
-}
-.callout[data-callout="example"] > .callout-title {
-  color: #9e77ff;
-}
-.callout:is([data-callout="quote"], [data-callout="cite"]) > .callout-title {
-  color: var(--text-normal);
-}
-
-.cm-s-obsidian span.cm-quote {
-  color: var(--text-normal);
-}
-
-.cm-s-obsidian span.cm-formatting-quote {
-  color: var(--accent-color-text);
-}
-
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
-  margin-left: -10px;
-}
-
-.callout-content {
-  color: var(--text-normal);
-}
+*/
