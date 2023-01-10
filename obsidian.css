@@ -1,26 +1,28 @@
 .theme-dark {
-  --background-primary: #000000;
+  --background-primary: #222222;
+  --background-secondary: #333333;
+  /*
   --background-primary-alt: #000000;
-  --background-secondary: #0f0f0f;
   --background-secondary-alt: #000000;
+  */
 
-  --accent-color-text: #ffff00;
-  --accent-color-borders: #ffffff;
-  --icon-color: #ffffff;
+  --accent-color-text: #FFFF00;
+  --accent-color-borders: #FFFFFF;
+  --icon-color: #FFFFFF;
   --gray-color: #585858;
 
-  --text-normal: #ffffff;
-  --text-bold: #ff0000;
-  --text-link: #00ff00;
-  --text-highlight: #ffff00;
-  --text-italics: #00ffff;
+  --text-normal: #FFFFFF;
+  --text-bold: #FF0000;
+  --text-italics: #00FFFF;
+  --text-link: #00FF00;
+  --text-highlight: #FFF700;
 
-  --text-title-h1: #ff0000;
-  --text-title-h2: #00ff00;
-  --text-title-h3: #ffff00;
-  --text-title-h4: #00ffff;
-  --text-title-h5: #ffa500;
-  --text-title-h6: #ff00aa;
+  --text-title-h1: #FF0000;
+  --text-title-h2: #00FF00;
+  --text-title-h3: #FFFF00;
+  --text-title-h4: #00FFFF;
+  --text-title-h5: #FFA500;
+  --text-title-h6: #FF00AA;
 }
 
 /* Italics */
@@ -60,12 +62,13 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
   color: var(--text-normal);
 }
 
-/* Code Block Text Color */
+/* Code Block Colors */
 
 .cm-s-obsidian span.cm-inline-code, .markdown-rendered code, .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
   color: #d9ff00;
   font-weight: bolder;
   font-size: 100%;
+  background-color: var(--background-secondary) !important;
 }
 
 /* Table Colors */
@@ -432,6 +435,19 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 .community-item {
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-borders);
+}
+
+.community-item.is-selected {
+  background-color: var(--background-primary);
+  border: 2px solid var(--accent-color-text);
+}
+
+.community-item-name, .community-item.is-selected .flair {
+  color: var(--accent-color-text);
+}
+
+.community-item.is-selected .community-item-author, .community-item.is-selected .community-item-repo, .community-item.is-selected .community-item-downloads, .community-item.is-selected .community-item-updated, .community-item-updated, .community-item-desc {
+  color: var(--accent-color-borders);
 }
 
 /* Top Bar */
