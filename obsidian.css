@@ -1,6 +1,7 @@
 .theme-dark {
   --background-primary: #222222;
   --background-secondary: #333333;
+  --background-third: #444444;
   /*
   --background-primary-alt: #000000;
   --background-secondary-alt: #000000;
@@ -64,12 +65,19 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
 
 /* Code Block Colors */
 
-.cm-s-obsidian span.cm-inline-code, .markdown-rendered code, .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-  color: #d9ff00;
+.cm-s-obsidian span.cm-inline-code, .markdown-rendered code, .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock, .markdown-rendered pre {
+  color: var(--text-normal);
   font-weight: bolder;
   font-size: 100%;
-  background-color: var(--background-secondary) !important;
+  background-color: var(--background-third) !important;
 }
+
+.cm-s-obsidian span.cm-inline-code {
+  padding: 5px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
 
 /* Table Colors */
 
