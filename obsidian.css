@@ -7,6 +7,9 @@
   --background-secondary-alt: #000000;
   */
 
+  --pdf-background: #FFFFFF;
+  --pdf-text: #000000;
+
   --accent-color-text: #FFFF00;
   --accent-color-borders: #FFFFFF;
   --color-icon: #FFFFFF;
@@ -16,7 +19,15 @@
   --text-bold: #FF0000;
   --text-italics: #00FFFF;
   --text-link: #00FF00;
-  --text-highlight: #FFF700;
+  --text-highlight: #FFFF00;
+  --text-strikethrough: #FF00FF;
+
+  --pdf-normal: #FFFFFF;
+  --pdf-bold: #660000;
+  --pdf-italics: #006666;
+  --pdf-link: #006600;
+  --pdf-highlight: #666600;
+  --pdf-strikethrough: #660066;
 
   --text-title-h1: #FF0000;
   --text-title-h2: #00FF00;
@@ -24,6 +35,13 @@
   --text-title-h4: #00FFFF;
   --text-title-h5: #FFA500;
   --text-title-h6: #FF00AA;
+
+  --pdf-title-h1: #660000;
+  --pdf-title-h2: #006600;
+  --pdf-title-h3: #160096;
+  --pdf-title-h4: #006060;
+  --pdf-title-h5: #855600;
+  --pdf-title-h6: #6000AA;
 }
 
 /* Italics */
@@ -47,7 +65,7 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
 
 .cm-strikethrough, del {
   text-decoration: none;
-  color: #ff00dd !important;
+  color: var(--text-strikethrough) !important;
 }
 
 /* Links */
@@ -78,7 +96,6 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
   border-radius: 5px;
 }
 
-
 /* Table Colors */
 
 .markdown-rendered th {
@@ -88,18 +105,6 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
 }
 
 .markdown-rendered tbody tr > td:nth-child(2n+2), .markdown-rendered thead tr > th:nth-child(2n+2) {
-  background-color: var(--background-primary);
-}
-
-/* Make PDF Export Black */
-
-.markdown-rendered th * {
-  background-color: var(--background-primary);
-}
-
-.markdown-rendered tr, .markdown-rendered td {
-  color: var(--text-normal);
-  border: 2px solid var(--gray-color) !important;
   background-color: var(--background-primary);
 }
 
@@ -717,43 +722,134 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
   color: var(--text-normal);
 }
 
-/*
+/* Print (PDF) Section */
 
-.callout:is([data-callout="note"]) {
-  background-color: #001b49;
-}
-.callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) {
-  background-color: #002c3f;
-}
-.callout:is([data-callout="info"], [data-callout="todo"]) {
-  background-color: #003b44;
-}
-.callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) {
-  background-color: #00302b;
-}
-.callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) {
-  background-color: #002e12;
-}
-.callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) {
-  background-color: #163a00;
-}
-.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) {
-  background-color: #3d2400;
-}
-.callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) {
-  background-color: #410000;
-}
-.callout:is([data-callout="danger"], [data-callout="error"]) {
-  background-color: #3d000c;
-}
-.callout[data-callout="bug"] {
-  background-color: #420018;
-}
-.callout[data-callout="example"] {
-  background-color: #12003f;
-}
-.callout:is([data-callout="quote"], [data-callout="cite"]) {
-  background-color: #101010;
-}
+@media print {
+  em, .cm-s-obsidian .cm-em {
+    color: var(--pdf-italics) !important;
+    text-decoration: underline;
+  }
 
-*/
+  .cm-strong, strong, strong, .cm-s-obsidian .cm-strong {
+    color: var(--pdf-bold) !important;
+    text-decoration: underline;
+  }
+  
+  .cm-strikethrough, del {
+    text-decoration: none;
+    color: var(--pdf-strikethrough) !important;
+    text-decoration: underline;
+  }
+
+  ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
+    color: var(--pdf-text);
+  }
+
+  .markdown-rendered th {
+    color: var(--pdf-highlight);
+    border: 2px solid var(--pdf-text) !important;
+    background-color: var(--pdf-background);
+  }
+  
+  .markdown-rendered tbody tr > td:nth-child(2n+2), .markdown-rendered thead tr > th:nth-child(2n+2) {
+    background-color: var(--pdf-background);
+  }
+
+  span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .markdown-rendered mark  {
+    background-color: transparent;
+    color: var(--pdf-highlight) !important;
+    text-decoration: underline;
+  }
+
+  .callout, .callout-title, .callout-icon {
+    color: var(--pdf-text);
+    border-color: var(--pdf-text);
+    background-color: var(--pdf-background);
+  }
+
+  .callout:is([data-callout="note"]), .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]), .callout:is([data-callout="info"], [data-callout="todo"]), .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]), .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]), .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]), .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]), .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]), .callout:is([data-callout="danger"], [data-callout="error"]), .callout[data-callout="bug"], .callout[data-callout="example"], .callout:is([data-callout="quote"], [data-callout="cite"]) {
+  border-color: var(--pdf-text);
+  }
+
+  .callout:is([data-callout="note"]) > .callout-title .callout-icon .svg-icon {
+    stroke: #4187ff;
+  }
+
+  .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #9de1ff;
+  }
+
+  .callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #00ddff;
+  }
+
+  .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #00ffe5;
+  }
+
+  .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #00ff62;
+  }
+  
+  .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #62ff00;
+  }
+  
+  .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #ff9500;
+  }
+
+  .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #ff0000;
+  }
+  
+  .callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title .callout-icon .svg-icon * {
+    stroke: #ff0033;
+  }
+
+  .callout[data-callout="bug"] > .callout-title .callout-icon .svg-icon * {
+    stroke: #ff005d;
+  }
+  
+  .callout[data-callout="example"] > .callout-title .callout-icon .svg-icon * {
+    stroke: #9e77ff;
+  }
+  
+  .callout:is([data-callout="quote"], [data-callout="cite"]) > .callout-title, .callout[data-callout="example"] > .callout-title, .callout[data-callout="bug"] > .callout-title, .callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title, .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title, .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title, .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title, .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title, .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title, .callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title, .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title, callout:is([data-callout="note"]) > .callout-title  {
+    color: var(--pdf-text);
+  }
+
+  .cm-header-1, .markdown-preview-view h1, .markdown-rendered h1
+  {
+    color: var(--pdf-title-h1);
+  }
+
+  .cm-header-2, .markdown-preview-view h2, .markdown-rendered h2
+  {
+    color: var(--pdf-title-h2);
+  }
+
+  .cm-header-3, .markdown-preview-view h3, .markdown-rendered h3
+  {
+    color: var(---pdf-title-h3);
+  }
+
+  .cm-header-4, .markdown-preview-view h4, .markdown-rendered h4
+  {
+    color: var(--pdf-title-h4);
+  }
+
+  .cm-header-5, .markdown-preview-view h5, .markdown-rendered h5
+  {
+    color: var(--pdf-title-h5);
+  }
+
+  .cm-header-6, .markdown-preview-view h6, .markdown-rendered h6
+  {
+    color: var(--pdf-title-h6);
+  }
+
+  .callout-content {
+    color: var(--pdf-text);
+  }
+}
