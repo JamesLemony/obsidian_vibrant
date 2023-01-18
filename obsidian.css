@@ -23,10 +23,10 @@
   --text-strikethrough: #FF00FF;
 
   --pdf-normal: #FFFFFF;
-  --pdf-bold: #660000;
-  --pdf-italics: #006666;
-  --pdf-link: #006600;
-  --pdf-highlight: #666600;
+  --pdf-bold: #810000;
+  --pdf-italics: #008181;
+  --pdf-link: #008100;
+  --pdf-highlight: #818100;
   --pdf-strikethrough: #660066;
 
   --text-title-h1: #FF0000;
@@ -36,12 +36,12 @@
   --text-title-h5: #FFA500;
   --text-title-h6: #FF00AA;
 
-  --pdf-title-h1: #660000;
-  --pdf-title-h2: #006600;
-  --pdf-title-h3: #160096;
-  --pdf-title-h4: #006060;
-  --pdf-title-h5: #855600;
-  --pdf-title-h6: #6000AA;
+  --pdf-title-h1: #810000;
+  --pdf-title-h2: #008100;
+  --pdf-title-h3: #1d00c0;
+  --pdf-title-h4: #008181;
+  --pdf-title-h5: #915e00;
+  --pdf-title-h6: #6c00be;
 }
 
 /* Italics */
@@ -771,82 +771,48 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
   border-color: var(--pdf-text);
   }
 
-  .callout:is([data-callout="note"]) > .callout-title .callout-icon .svg-icon {
-    stroke: #4187ff;
-  }
-
-  .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #9de1ff;
-  }
-
-  .callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #00ddff;
-  }
-
-  .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #00ffe5;
-  }
-
-  .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #00ff62;
+  .callout:is([data-callout="note"]) > .callout-title .callout-icon .svg-icon, .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title .callout-icon .svg-icon *, .callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title .callout-icon .svg-icon *,   .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title .callout-icon .svg-icon *, .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title .callout-icon .svg-icon *, .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title .callout-icon .svg-icon *, .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title .callout-icon .svg-icon *, .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title .callout-icon .svg-icon *, .callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title .callout-icon .svg-icon *, .callout[data-callout="bug"] > .callout-title .callout-icon .svg-icon *, .callout[data-callout="example"] > .callout-title .callout-icon .svg-icon * {
+    stroke: var(--pdf-text);
   }
   
-  .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #62ff00;
-  }
-  
-  .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #ff9500;
-  }
-
-  .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #ff0000;
-  }
-  
-  .callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title .callout-icon .svg-icon * {
-    stroke: #ff0033;
-  }
-
-  .callout[data-callout="bug"] > .callout-title .callout-icon .svg-icon * {
-    stroke: #ff005d;
-  }
-  
-  .callout[data-callout="example"] > .callout-title .callout-icon .svg-icon * {
-    stroke: #9e77ff;
-  }
-  
-  .callout:is([data-callout="quote"], [data-callout="cite"]) > .callout-title, .callout[data-callout="example"] > .callout-title, .callout[data-callout="bug"] > .callout-title, .callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title, .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title, .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title, .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title, .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title, .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title, .callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title, .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title, callout:is([data-callout="note"]) > .callout-title  {
+  .callout:is([data-callout="quote"], [data-callout="cite"],[data-callout="note"]) > .callout-title, .callout[data-callout="example"] > .callout-title, .callout[data-callout="bug"] > .callout-title, .callout:is([data-callout="danger"], [data-callout="error"]) > .callout-title, .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) > .callout-title, .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) > .callout-title, .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) > .callout-title, .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) > .callout-title, .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) > .callout-title, .callout:is([data-callout="info"], [data-callout="todo"]) > .callout-title, .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) > .callout-title, callout:is([data-callout="note"]) > .callout-title {
     color: var(--pdf-text);
   }
 
   .cm-header-1, .markdown-preview-view h1, .markdown-rendered h1
   {
     color: var(--pdf-title-h1);
+    text-decoration: underline;
   }
 
   .cm-header-2, .markdown-preview-view h2, .markdown-rendered h2
   {
     color: var(--pdf-title-h2);
+    text-decoration: underline;
   }
 
   .cm-header-3, .markdown-preview-view h3, .markdown-rendered h3
   {
-    color: var(---pdf-title-h3);
+    color: var(--pdf-title-h3);
+    text-decoration: underline;
   }
 
   .cm-header-4, .markdown-preview-view h4, .markdown-rendered h4
   {
     color: var(--pdf-title-h4);
+    text-decoration: underline;
   }
 
   .cm-header-5, .markdown-preview-view h5, .markdown-rendered h5
   {
     color: var(--pdf-title-h5);
+    text-decoration: underline;
   }
 
   .cm-header-6, .markdown-preview-view h6, .markdown-rendered h6
   {
     color: var(--pdf-title-h6);
+    text-decoration: underline;
   }
 
   .callout-content {
