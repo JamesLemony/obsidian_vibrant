@@ -100,12 +100,12 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
 
 .markdown-rendered th {
   color: var(--accent-color-text);
-  border: 2px solid var(--gray-color) !important;
+  border: 3px solid var(--gray-color) !important;
   background-color: var(--background-primary);
 }
 
-.markdown-rendered tbody tr > td:nth-child(2n+2), .markdown-rendered thead tr > th:nth-child(2n+2) {
-  background-color: var(--background-primary);
+.markdown-rendered tbody tr:nth-child(odd), .markdown-rendered tbody tr:nth-child(even) {
+  border: 3px solid var(--background-third);
 }
 
 /* Bullet Text Color */
@@ -142,8 +142,7 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
 /* File Margins */
 
 .markdown-source-view.mod-cm6 .cm-scroller {
-  padding-top: 0.5% !important;
-  padding-left: 1% !important;
+  padding-top: 0% !important;
 }
 
 /* Embedded Link Preview Title */
@@ -741,6 +740,11 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
     text-decoration: underline;
   }
 
+  .cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link, .markdown-rendered .internal-link, span.cm-underline, .cm-s-obsidian span.cm-hmd-internal-link, .markdown-source-view.mod-cm6 .is-unresolved, .external-link {
+    color: var(--pdf-link);
+    text-decoration: underline !important;
+  }
+
   ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
     color: var(--pdf-text);
   }
@@ -749,6 +753,7 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
     color: var(--pdf-highlight);
     border: 2px solid var(--pdf-text) !important;
     background-color: var(--pdf-background);
+    text-decoration: underline;
   }
   
   .markdown-rendered tbody tr > td:nth-child(2n+2), .markdown-rendered thead tr > th:nth-child(2n+2) {
@@ -817,5 +822,17 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 
   .callout-content {
     color: var(--pdf-text);
+  }
+
+  .markdown-embed-title  {
+    font-size: 150%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(120deg, var(--pdf-text) 30%, var(--pdf-text) 70%, var(--pdf-text) 100%) !important;
+    background-size: 100%;
+    width: fit-content;
+    color: var(--pdf-text) !important;
+    text-decoration: underline;
   }
 }
