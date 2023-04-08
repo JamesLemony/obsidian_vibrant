@@ -340,6 +340,11 @@ hr.workspace-leaf-resize-handle {
   background-color: var(--background-primary);
 }
 
+.workspace-ribbon.mod-left:before {
+  background-color: var(--background-primary);
+  display: none;
+}
+
 /* Right Panel */
 
 .workspace-tabs .workspace-leaf .view-content {
@@ -770,6 +775,8 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
     color: var(--pdf-text);
     border-color: var(--pdf-text);
     background-color: var(--pdf-background);
+    page-break-before: auto;
+    page-break-after: avoid;
   }
 
   .callout:is([data-callout="note"]), .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]), .callout:is([data-callout="info"], [data-callout="todo"]), .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]), .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]), .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]), .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]), .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]), .callout:is([data-callout="danger"], [data-callout="error"]), .callout[data-callout="bug"], .callout[data-callout="example"], .callout:is([data-callout="quote"], [data-callout="cite"]) {
