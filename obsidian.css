@@ -125,6 +125,17 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
   color: var(--accent-color-text);
 }
 
+/* Quote */
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote  {
+  background-color: var(--background-third);
+  border-radius: 5px;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+  margin-left: 1px;
+}
+
 /* Reading Mode Justify */
 
 .markdown-preview-view p {
@@ -715,10 +726,6 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 
 .cm-s-obsidian span.cm-formatting-quote {
   color: var(--accent-color-text);
-}
-
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
-  margin-left: -10px;
 }
 
 .callout-content {
