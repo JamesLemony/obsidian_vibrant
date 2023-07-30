@@ -557,9 +557,36 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 }
 
 .canvas-node {
-  border-color: var(--accent-color-text);
+  border: 2px solid var(--accent-color-borders);
 }
 
+/* Meta Data and Properties */
+
+.metadata-properties {
+  border: 2px solid var(--background-secondary);
+  border-radius: 0.2cm;
+
+}
+
+.metadata-properties:hover {
+  border: 2px solid var(--accent-color-borders);
+  border-radius: 0.2cm;
+}
+
+.metadata-property:hover {
+  border: 2px solid var(--accent-color-borders);
+  border-radius: 0.2cm;
+}
+
+.metadata-property:focus-within {
+  border: 2px solid var(--accent-color-text);
+  border-radius: 0.2cm;
+}
+
+.metadata-property {
+  border: 2px solid var(--background-primary);
+  padding-top: 2px;
+}
 
 /* Headings */
 
