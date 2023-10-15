@@ -36,8 +36,8 @@
 
 /* Normal Text Color */
 
-.markdown-source-view.mod-cm6 .cm-line {
-  color: var(--accent-color-borders);
+.markdown-source-view.mod-cm6 .cm-line, .markdown-rendered tbody tr > td:last-child, .markdown-rendered tbody tr > td:first-child {
+  color: var(--text-normal);
 }
 
 /* Italics */
