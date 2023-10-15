@@ -34,6 +34,12 @@
   --pdf-title-h6: #6c00be;
 }
 
+/* Normal Text Color */
+
+.markdown-source-view.mod-cm6 .cm-line {
+  color: var(--accent-color-borders);
+}
+
 /* Italics */
 
 em, .cm-s-obsidian .cm-em {
@@ -145,6 +151,7 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
   text-justify: inter-word;
 }
 */
+
 /* File Margins */
 
 .markdown-source-view.mod-cm6 .cm-scroller {
