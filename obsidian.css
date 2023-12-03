@@ -37,7 +37,7 @@
 /* That weird dot fix */
 
 
-.workspace-split.mod-vertical.mod-root hr.workspace-leaf-resize-handle {
+.workspace-tab-container .workspace-leaf.mod-active hr.workspace-leaf-resize-handle {
   border-color: var(--background-primary) !important;
 }
 
