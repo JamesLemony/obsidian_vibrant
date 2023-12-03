@@ -37,8 +37,8 @@
 /* That weird dot fix */
 
 
-.workspace-tab-container .workspace-leaf.mod-active hr.workspace-leaf-resize-handle {
-  border-color: var(--background-primary) !important;
+.workspace-tab-container .workspace-leaf.mod-active hr.workspace-leaf-resize-handle, .workspace-tab-container .workspace-leaf .workspace-leaf-resize-handle {
+  display: none;
 }
 
 /* Normal Text Color */
