@@ -73,8 +73,8 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
 
 /* Links */
 
-.cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link, .markdown-rendered .internal-link, span.cm-underline, .cm-s-obsidian span.cm-hmd-internal-link, .markdown-source-view.mod-cm6 .is-unresolved, .external-link,  .markdown-source-view.mod-cm6 .cm-url .cm-underline  {
-  color: var(--text-link);
+.cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link, .markdown-rendered .internal-link, span.cm-underline, .cm-s-obsidian span.cm-hmd-internal-link, .markdown-source-view.mod-cm6 .is-unresolved, .external-link,  .markdown-source-view.mod-cm6 .cm-url .cm-underline, .markdown-source-view.mod-cm6 .cm-underline {
+  color: var(--text-link) !important;
   text-decoration: none !important;
 }
 
