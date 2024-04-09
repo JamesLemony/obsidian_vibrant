@@ -399,7 +399,7 @@ hr.workspace-leaf-resize-handle {
   font-size: larger;
 }
 
-input[type='text'], input[type='text']:focus, input[type='search']:focus{
+input[type='text'], input[type='text']:focus, input[type='search']:focus {
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-borders);
 }
@@ -473,7 +473,7 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
   border: 2px solid var(--accent-color-borders);
 }
 
-.community-item.is-selected, .community-item.is-selected:hover, .community-item:hover {
+.community-item.is-selected, body:not(.is-phone) .community-item.is-selected, body:not(.is-phone) .community-item.is-selected:hover, .community-item.is-selected:hover, .community-item:hover {
   color: var(--accent-color-borders);
   background-color: var(--background-primary);
   border: 2px solid var(--accent-color-text);
@@ -493,7 +493,7 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 .community-item.is-selected .community-item-downloads, .community-item.is-selected:hover .community-item-downloads,
 .community-item.is-selected .community-item-updated, .community-item.is-selected:hover .community-item-updated,
 .community-item-updated, .community-item-desc,
-.community-item-author {
+.community-item-author, body:not(.is-phone) .community-item.is-selected .community-item-author {
   color: var(--accent-color-borders);
   opacity: 1;
 }
