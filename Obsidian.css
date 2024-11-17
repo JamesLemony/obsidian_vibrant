@@ -9,6 +9,7 @@
 
   --accent-color-text: #FFFF00;
   --accent-color-borders: #FFFFFF;
+  --accent-color-text-inverted: #000000;
   --color-icon: #FFFFFF;
   --gray-color: #585858;
 
@@ -227,7 +228,11 @@ input[type=checkbox]:checked:hover {
   color: var(--text-normal);
 }
 
-.workspace-tab-header-container{
+.workspace-tab-header-container-inner {
+  padding-left: 3px !important;
+}
+
+.workspace-tab-header-container {
   background-color: var(--background-primary);
   border-bottom: 2px solid var(--background-primary);
 }
@@ -282,6 +287,14 @@ svg.svg-icon, rect, svg {
   opacity: 1;
   stroke: var(--color-icon);
   stroke-width: 3px;
+}
+
+.node-labels, .branchLabel, .commit-label, .nodes, .mermaid rect, tspan {
+    stroke-width: 0.0px !important;
+}
+
+tspan {
+  fill: var(--accent-color-text-inverted);
 }
 
 .prompt {
