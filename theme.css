@@ -88,6 +88,10 @@ span.cm-highlight, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian s
 }
 
 .cm-s-obsidian span.cm-formatting-link-string {
+  color: var(--text-link);
+}
+
+.cm-formatting.cm-formatting-link-string.cm-string.cm-url.external-link {
   display: none;
 }
 
@@ -202,7 +206,6 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
 }
 
 
-
 /* Checkbox Colors */
 
 input[type=checkbox] {
@@ -253,12 +256,20 @@ input[type=checkbox]:checked:hover {
   color: var(--text-normal);
 }
 
-.workspace-tab-header-container-inner {
-  padding-left: 3px !important;
+.mod-root .workspace-tab-header-container-inner {
+  padding-left: 5px;
 }
 
 .workspace-tab-header-container .workspace-tab-header.is-active {
   box-shadow: 0 0 0 2px var(--accent-color-text);
+}
+
+.workspace-tab-header-container .workspace-tab-header:last-child {
+  margin-right: 2px;
+}
+
+.workspace-tab-header-container .workspace-tab-header:first-child {
+  margin-left: 2px;
 }
 
 .workspace-tab-header-container {
@@ -537,6 +548,11 @@ button:focus, button:hover, textarea:hover, textarea:focus, button.mod-cta:hover
 .community-item-updated, .community-item-desc,
 .community-item-author, body:not(.is-phone) .community-item.is-selected .community-item-author {
   color: var(--accent-color-borders);
+  opacity: 1;
+}
+
+body:not(.is-phone) .community-item.is-selected .community-item-author, body:not(.is-phone) .community-item.is-selected:hover .community-item-author, body:not(.is-phone) .community-item.is-selected .community-item-repo, body:not(.is-phone) .community-item.is-selected:hover .community-item-repo, body:not(.is-phone) .community-item.is-selected .community-item-downloads, body:not(.is-phone) .community-item.is-selected:hover .community-item-downloads, body:not(.is-phone) .community-item.is-selected .community-item-updated, body:not(.is-phone) .community-item.is-selected:hover .community-item-updated {
+  color: var(--text-normal);
   opacity: 1;
 }
 
